@@ -1,6 +1,16 @@
-# Handles user signup and login
+class User_Controller:
+    #in memomry structure for user daata
+    users = []
 
-# Placeholder function signatures:
-# function create_user(name, email, password)
-# function login_user(email, password)
+    #create a new user account
+    function create_user(name, email, password):
+
+        new_user = {
+            "name": name,
+            "email": email,
+            "password": password
+        }
+
+        users.append(new_user)
+        print "Account is successfully created!"
 
