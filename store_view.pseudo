@@ -1,4 +1,4 @@
-class Product_Model:
+class Store_View:
 
 #returns the list of products that matches the filter
 def filter_products(filters):
