@@ -1,8 +1,5 @@
 # Displays product listings
 
-# Placeholder function:
-# function display_products()
-
 # Feature 4 -The display_products() function exists.
 # Feature 3 - This function can render the full list of products called by main.
 def display_products(products_to_display):
