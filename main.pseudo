@@ -1,32 +1,99 @@
-# Main entry point
+[Feature 2]
+#simulates the login/signup process
+while true:
+    print "Welcome to pseudo-shop!"
+    print "Please choose an option:"
+    print "1. Register"
+    print "2. Login"
+    print "3. Exit"
 
-# This file ties together all components of the pseudo-shop
-# Feel free to modify this to simulate application flow
+    input option 
 
-# Run the app
-print "Welcome to the Pseudo Shop!"
+    #process account registration
+    if option = 1:
+        input name
+        input email
+        #check if email already used
+        if email_validation is not none:
+            print "Email already registered, please try again."
+            continue
+        input password
+        input confirmPassword
+        if password != confirmPassword
+            print "password not equal, please try again"
+            continue
+        
+        create_user(name, email, password)
+        continue
 
-#Feature 3 - Product Creation
-print "Populating product inventory..."
-add_product(
-    name = "Gaming Laptop"
-    wdith = 14, height = 1, length = 9, weight = 4.5,
-    color = "silver", brand = "ASUS", price = "1499"
-)
-add_product(
-    name="Wireless Mouse",
-    width=3, height=1.5, length=5, weight=0.5,
-    color="black", brand="Logitech", price=49.99
-)
-add_product(
-    name="Gaming Keyboard",
-    width=18, height=2, length=7, weight=2.5,
-    color="black", brand="HyperX", price=119.99
-)
+    #process account login
+    else if option = 2:
+        input email
+        input password
+        if User_Controller.login_user(email, password) is failure:
+            print "Incorrect email and/or password!"
+            return
+        else:
+            print "Welcome!"
+    
+    #end the program
+    else if choice = 3:
+        print "Application closing..."
+        break
 
-all_products = product_list
-display_products(all_products)
-print "----------------------------------"
-print "Simulation for Product Management & Storefront Complete."
-print "----------------------------------"
+    else:
+        print "Option invalid! Please try again"
+        continue
+        
+    #Feature 3 - Product Creation
+    print "Populating product inventory..."
+    add_product(
+        name = "Gaming Laptop"
+        wdith = 14, height = 1, length = 9, weight = 4.5,
+        color = "silver", brand = "ASUS", price = "1499"
+    )
+    add_product(
+        name="Wireless Mouse",
+        width=3, height=1.5, length=5, weight=0.5,
+        color="black", brand="Logitech", price=49.99
+    )
+    add_product(
+        name="Gaming Keyboard",
+        width=18, height=2, length=7, weight=2.5,
+        color="black", brand="HyperX", price=119.99
+    )
+
+    #option for user to add product
+    while true:
+        print "add product? Y/N"
+        input add-product
+
+        if add-product == 'Y':
+            print "Please input the attributes of your product using this format:"
+            print "name, width, height, length, weight, color, brand, price"
+            input product-attr
+            add_product(product-attr)
+            continue 
+
+        elif add_product == 'N':
+            break  
+
+        else:
+            print "Invalid input"
+            continue
+    
+    all_products = product_list
+    display_products(all_products)
+    print "----------------------------------"
+    print "Simulation for Product Management & Storefront Complete."
+    print "----------------------------------"
+
+    #get input data for filters
+    input filters
+
+    #process filter if not none
+    if filters is not none:
+        display_products(filter_products(filters))
+
+    
 
