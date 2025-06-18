@@ -93,7 +93,7 @@ while true:
 
     #process filter if not none
     if filters is not none:
-        display filter_products(filters)
+        display_products(filter_products(filters))
 
     
 
