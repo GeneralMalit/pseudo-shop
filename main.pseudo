@@ -6,3 +6,25 @@
 # Run the app
 print "Welcome to the Pseudo Shop!"
 
+#Feature 3 - Product Creation
+print "Populating product inventory..."
+add_product(
+    name = "Gaming Laptop"
+    wdith = 14, height = 1, length = 9, weight = 4.5,
+    color = "silver", brand = "ASUS", price = "1499"
+)
+add_product(
+    name="Wireless Mouse",
+    width=3, height=1.5, length=5, weight=0.5,
+    color="black", brand="Logitech", price=49.99
+)
+add_product(
+    name="Gaming Keyboard",
+    width=18, height=2, length=7, weight=2.5,
+    color="black", brand="HyperX", price=119.99
+)
+
+all_products = product_list
+display_products(all_products)
+print "\n\n Simulation for Product Management & Storefront Complete. \n\n"
+
