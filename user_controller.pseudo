@@ -4,14 +4,14 @@ class User_Controller:
     users = []
 
     #validate if email is registered
-    function email_validation(email):
+    def email_validation(email):
         for each user in users:
             if user["email"] == email:
                 return user
         return none
     
     #create a new user account
-    function create_user(name, email, password):
+    def create_user(name, email, password):
 
         #checks if email is already registered
         if email_validation(email) is not none:
@@ -29,3 +29,16 @@ class User_Controller:
         print "Account is successfully created!"
         return true
 
+    #login account
+    def login_user(email, password):
+    
+        #get the user information based on email
+        user = email_validation(email)
+
+        #verifies if email and password is valid
+        if user is none or user["password"] != password:
+            print "Login failed: email and/or password is incorrect, please try again."
+            return false
+        
+        print "Login successfull!"
+        return true
