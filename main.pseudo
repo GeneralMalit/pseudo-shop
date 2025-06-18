@@ -26,5 +26,7 @@ add_product(
 
 all_products = product_list
 display_products(all_products)
-print "\n\n Simulation for Product Management & Storefront Complete. \n\n"
+print "----------------------------------"
+print "Simulation for Product Management & Storefront Complete."
+print "----------------------------------"
 
