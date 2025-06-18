@@ -1,9 +1,7 @@
 # Displays product listings
 
-# Placeholder function:
-# function display_products()
-
-
+# Feature 4 -The display_products() function exists.
+# Feature 3 - This function can render the full list of products called by main.
 def display_products(products_to_display):
     if not products_to_display:
         print "No products to display."
@@ -19,3 +17,4 @@ def display_products(products_to_display):
         print f"Color: {product.color}"
         print f"Dimensions: {product.length} x {product.width} x {product.height}, wt: {product.weight}"
     print "  ------"
+    print "Please enjoy our selection of tech products."
