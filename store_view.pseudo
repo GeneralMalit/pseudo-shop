@@ -1,4 +1,25 @@
-# Displays product listings
+
+# [Feature 1]returns the list of products that matches the filter
+def filter_products(filters):
+
+    # in-memory data structure to store result of filtered products
+    filter_result = []
+
+    # filter product_list
+    for each product in Product_Model.product_list:
+        match = true
+
+        # checks product list if there is match in filters
+        for key,value in filters.items():
+            if getattr(product, key) != value: 
+                match = false
+                break
+
+        # store the filtered product into filter_result
+        if match:
+            filter_result.append(product) 
+    
+    return filter_result
 
 # Feature 4 -The display_products() function exists.
 # Feature 3 - This function can render the full list of products called by main.
@@ -18,3 +39,6 @@ def display_products(products_to_display):
         print f"Dimensions: {product.length} x {product.width} x {product.height}, wt: {product.weight}"
     print "  ------"
     print "Please enjoy our selection of tech products."
+
+
+

@@ -1,10 +1,4 @@
-# Main entry point
 
-# This file ties together all components of the pseudo-shop
-# Feel free to modify this to simulate application flow
-
-# Run the app
-print "Welcome to the Pseudo Shop!"
 
 #Feature 3 - Product Creation
 print "Populating product inventory..."
@@ -29,4 +23,11 @@ display_products(all_products)
 print "----------------------------------"
 print "Simulation for Product Management & Storefront Complete."
 print "----------------------------------"
+
+#get input data for filters
+input filters
+
+#process filter if not none
+if filters is not none:
+    display filter_products(filters)
 
