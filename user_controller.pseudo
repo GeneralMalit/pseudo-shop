@@ -1,7 +1,15 @@
 class User_Controller:
+
     #in memomry structure for user daata
     users = []
 
+    #validate if email is registered
+    function email_validation(email):
+        for each user in users:
+            if user["email"] == email:
+                return user
+        return none
+    
     #create a new user account
     function create_user(name, email, password):
 
