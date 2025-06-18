@@ -1,5 +1,20 @@
-# Displays product listings
+class Product_Model:
 
-# Placeholder function:
-# function display_products()
+def filter_products(filters):
 
+    #in-memory data structure to store result of filtered products
+    filter_result = []
+
+    #filter product_list
+    for each product in Product_Model.product_list:
+        match = true
+
+        for key,value in filters.items():
+            if getattr(product, key) != value: 
+                match = false
+                break
+        
+        if match:
+            filter_result.append(product) #store the filtered product into filter_result
+    
+    return filter_result
