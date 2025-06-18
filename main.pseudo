@@ -1,8 +1,44 @@
-# Main entry point
+[Feature 2]
+print "Welcome to pseudo-shop!"
+print "Please choose an option:"
+print "1. Register"
+print "2. Login"
+print "3. Exit"
 
-# This file ties together all components of the pseudo-shop
-# Feel free to modify this to simulate application flow
+#simulates the login/signup process
+while true:
+        
+    input option
 
-# Run the app
-print "Welcome to the Pseudo Shop!"
+    if option = 1:
+        input name
+        input email
+        #check if email already used
+        if email_validation is not none:
+            print "Email already registered, please try again."
+            continue
+        input password
+        input confirmPassword
+        if password != confirmPassword
+            print "password not equal, please try again"
+            continue
+        
+        User_Controller.create_user(name, email, password)
 
+    else if option = 2:
+        input email
+        input password
+        if User_Controller.login_user(email, password) is failure:
+            print "Incorrect email and/or password!"
+            return
+        else:
+            print "Welcome!"
+    
+    else if choice = 3:
+        print "Application closing..."
+        break
+
+    else:
+        print "Option invalid! Please try again"
+        continue
+        
