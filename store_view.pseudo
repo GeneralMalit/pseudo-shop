@@ -1,5 +1,6 @@
 class Product_Model:
 
+#returns the list of products that matches the filter
 def filter_products(filters):
 
     #in-memory data structure to store result of filtered products
@@ -9,12 +10,14 @@ def filter_products(filters):
     for each product in Product_Model.product_list:
         match = true
 
+        #checks product list if there is match in filters
         for key,value in filters.items():
             if getattr(product, key) != value: 
                 match = false
                 break
-        
+
+        #store the filtered product into filter_result
         if match:
-            filter_result.append(product) #store the filtered product into filter_result
+            filter_result.append(product) 
     
     return filter_result
