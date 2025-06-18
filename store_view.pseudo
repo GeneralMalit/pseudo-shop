@@ -3,3 +3,19 @@
 # Placeholder function:
 # function display_products()
 
+
+def display_products(products_to_display):
+    if not products_to_display:
+        print "No products to display."
+        return
+
+    print "Storefront"
+    for product in products_to_display:
+        # [Feature 4] Output shows name, price, and attributes.
+        print "" name price brand color specs
+        print f"Name: {product.name}"
+        print f"Price: {product.price}"
+        print f"Brand: {product.brand}"
+        print f"Color: {product.color}"
+        print f"Dimensions: {product.length} x {product.width} x {product.height}, wt: {product.weight}"
+    print "  ------"
