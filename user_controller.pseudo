@@ -1,6 +1,44 @@
-# Handles user signup and login
+class User_Controller:
 
-# Placeholder function signatures:
-# function create_user(name, email, password)
-# function login_user(email, password)
+    #in memomry structure for user daata
+    users = []
 
+    #validate if email is registered
+    def email_validation(email):
+        for each user in users:
+            if user["email"] == email:
+                return user
+        return none
+    
+    #create a new user account
+    def create_user(name, email, password):
+
+        #checks if email is already registered
+        if email_validation(email) is not none:
+            print "Email is already registered!"
+            return false
+        
+        #create new user and append it to users[]
+        new_user = {
+            "name": name,
+            "email": email,
+            "password": password
+        }
+
+        users.append(new_user)
+        print "Account is successfully created!"
+        return true
+
+    #login account
+    def login_user(email, password):
+    
+        #get the user information based on email
+        user = email_validation(email)
+
+        #verifies if email and password is valid
+        if user is none or user["password"] != password:
+            print "Login failed: email and/or password is incorrect, please try again."
+            return false
+        
+        print "Login successfull!"
+        return true
